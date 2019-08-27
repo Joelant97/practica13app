@@ -1,0 +1,62 @@
+plugins {
+    id 'org.springframework.boot' version '2.1.6.RELEASE'
+    id 'java'
+}
+
+apply plugin: 'io.spring.dependency-management'
+
+group = 'arkham.knight'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+configurations {
+    developmentOnly
+    runtimeClasspath {
+        extendsFrom developmentOnly
+    }
+}
+
+repositories {
+    mavenCentral()
+    maven {
+        url 'http://maven.vaadin.com/vaadin-addons'
+    }
+}
+
+ext {
+    set('vaadinVersion', "13.0.8")
+}
+dependencies {
+
+//    // https://mvnrepository.com/artifact/org.vaadin.ui/numberfield
+//    compile group: 'org.vaadin.ui', name: 'numberfield', version: '0.2.0'
+    // https://mvnrepository.com/artifact/org.vaadin.addons/numberfield
+    compile group: 'org.vaadin.addons', name: 'numberfield', version: '0.5.4'
+
+
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-freemarker'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.session:spring-session-core'
+    implementation 'com.vaadin:vaadin-spring-boot-starter'
+    compile('org.springframework.session:spring-session-hazelcast')
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+    runtimeOnly 'mysql:mysql-connector-java'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.springframework.security:spring-security-test'
+    implementation 'com.vaadin:vaadin-charts-flow:6.3.0'
+
+
+//    implementation 'com.vaadin.addon:vaadin-charts:4.0.0-alpha4'
+//    implementation 'com.vaadin:vaadin-server:8.0.0.alpha8'
+    
+//    implementation 'org.springframework.boot:spring-boot-starter-mail:2.1.6.RELEASE'
+    compile 'org.springframework.boot:spring-boot-starter-mail:2.0.0.RELEASE'
+}
+dependencyManagement {
+    imports {
+        mavenBom "com.vaadin:vaadin-bom:${vaadinVersion}"
+        mavenBom "com.vaadin:vaadin:${vaadinVersion}"
+    }
+}
