@@ -4,74 +4,33 @@ services:
 
   spring1:
     image: kerxd/spring-mysql-practica4
-
+    deploy:
+      replicas: 3
     container_name: spring1
-    
+
     environment:
       - SERVER_PORT=80
 
     networks:
       - practica4-mysql
-
-    
-
     depends_on:
       - mysqldb3
-      
-      
-  spring2:
-    image: kerxd/spring-mysql-practica4
 
-    container_name: spring2
-    
-    environment:
-      - SERVER_PORT=80
-
-    networks:
-      - practica4-mysql
-
-    
-
-    depends_on:
-      - mysqldb3
-      
-      
-  spring3:
-    image: kerxd/spring-mysql-practica4
-
-    container_name: spring3
-    
-    environment:
-      - SERVER_PORT=80
-
-    networks:
-      - practica4-mysql
-
-    
-    depends_on:
-      - mysqldb3
-      
-      
-      
   haproxy:
     image: kerxd/haproxy-config
-    
+
     container_name: docker-haproxy-config
     networks:
       - practica4-mysql
 
     depends_on:
       - spring1
-      - spring2
-      - spring3
 
     volumes:
       - /usr/local/etc/haproxy
-    
+
     ports:
       - "81:80"
-      
-      
 
   mysqldb3:
     image: mysql:8
@@ -81,13 +40,14 @@ services:
 
     environment:
       - MYSQL_ROOT_PASSWORD=root
-      - MYSQL_DATABASE=practica4  
+      - MYSQL_DATABASE=1234
 
-      
+    ports:
+      - 3306:3306
+
     volumes:
       - mysql_db:/var/lib/mysql
-      
-      
+
 volumes:
   mysql_db:
 
