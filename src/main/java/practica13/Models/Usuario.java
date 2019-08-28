@@ -15,6 +15,8 @@ public class Usuario {
     private String password;
     private String email;
     private boolean isAdmin;
+    private int active;
+    private Rol r;
 
 
     public Usuario(String username, String password, String email, boolean isAdmin) {
@@ -25,6 +27,9 @@ public class Usuario {
     }
 
     public Usuario() {
+    }
+
+    public Usuario(int i, String admin, String admin1, String s, Rol rol) {
     }
 
     public Long getId() {
@@ -67,4 +72,16 @@ public class Usuario {
         isAdmin = admin;
     }
 
+    public void setActive(int active) {
+        
+        this.active = active;
+    }
+
+    public int getActive() {
+        return active;
+    }
+
+    public void setRol(Rol r) {
+        this.r = r;
+    }
 }

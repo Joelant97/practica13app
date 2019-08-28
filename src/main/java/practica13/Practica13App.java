@@ -24,7 +24,7 @@ public class Practica13App extends SpringBootServletInitializer {
         mailSender.setHost("smtp.gmail.com");
         mailSender.setPort(587);
 
-        mailSender.setUsername("luillicapellan29@gmail.com");
+        mailSender.setUsername("joelant97@gmail.com");
         mailSender.setPassword("clave");
 
         Properties props = mailSender.getJavaMailProperties();
