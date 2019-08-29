@@ -25,46 +25,46 @@
                             <span><@spring.message "usuarios"/></span>
                         </a>
                     </li>
+                    <#--<li>-->
+                        <#--<a href="/clientes/">-->
+                            <#--<i class="fa fa-users" aria-hidden="true"></i>-->
+                            <#--<span><@spring.message "clientes"/></span>-->
+                        <#--</a>-->
+                    <#--</li>-->
+                    <#--<li>-->
+                        <#--<a href="/categorias/">-->
+                            <#--<i class="fa fa-list" aria-hidden="true"></i>-->
+                            <#--<span><@spring.message "categorias"/></span>-->
+                        <#--</a>-->
+                    <#--</li>-->
+                    <#--<li>-->
+                        <#--<a href="/subcategorias/">-->
+                            <#--<i class="fa fa-table" aria-hidden="true"></i>-->
+                            <#--<span><@spring.message "subcategorias"/></span>-->
+                        <#--</a>-->
+                    <#--</li>-->
                     <li>
-                        <a href="/clientes/">
-                            <i class="fa fa-users" aria-hidden="true"></i>
-                            <span><@spring.message "clientes"/></span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/categorias/">
-                            <i class="fa fa-list" aria-hidden="true"></i>
-                            <span><@spring.message "categorias"/></span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/subcategorias/">
+                        <a href="/encuestas/">
                             <i class="fa fa-table" aria-hidden="true"></i>
-                            <span><@spring.message "subcategorias"/></span>
+                            <span><@spring.message "encuestas"/></span>
                         </a>
                     </li>
-                    <li>
-                        <a href="/equipos/">
-                            <i class="fa fa-table" aria-hidden="true"></i>
-                            <span><@spring.message "equipos"/></span>
-                        </a>
-                    </li>
-                    <li class="nav-parent">
-                        <a>
-                            <i class="fa fa-list" aria-hidden="true"></i>
-                            <span><@spring.message "alquileres"/></span>
-                        </a>
-                        <ul class="nav nav-children">
-                            <li>
-                                <a href="/alquileres/"><@spring.message "administrar"/></a>
-                            </li>
-                        </ul>
-                        <ul class="nav nav-children">
-                            <li>
-                                <a href="/alquileres/nodevueltos/"><@spring.message "nodevueltos"/></a>
-                            </li>
-                        </ul>
-                    </li>
+                    <#--<li class="nav-parent">-->
+                        <#--<a>-->
+                            <#--<i class="fa fa-list" aria-hidden="true"></i>-->
+                            <#--<span><@spring.message "alquileres"/></span>-->
+                        <#--</a>-->
+                        <#--<ul class="nav nav-children">-->
+                            <#--<li>-->
+                                <#--<a href="/alquileres/"><@spring.message "administrar"/></a>-->
+                            <#--</li>-->
+                        <#--</ul>-->
+                        <#--<ul class="nav nav-children">-->
+                            <#--<li>-->
+                                <#--<a href="/alquileres/nodevueltos/"><@spring.message "nodevueltos"/></a>-->
+                            <#--</li>-->
+                        <#--</ul>-->
+                    <#--</li>-->
                 </ul>
             </nav>
 

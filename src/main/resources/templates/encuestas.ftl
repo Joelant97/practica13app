@@ -15,7 +15,7 @@
             <h3>${tituloCrearEquipo}</h3>
             <h6>${mensajeCrearEquipo}</h6>
         </div>
-        <form id="agregarCliente" method="POST" action="/equipo/crear">
+        <form id="agregarCliente" method="POST" action="/encuestas/crear/">
             <div class="form-group">
                 <input type="text" class="form-control" name="nombre" placeholder="${placeholderNombreEquipo}"
                        required/>
@@ -53,27 +53,27 @@
     </main>
 </div>
 </body>
-<script>
-    function filtrarSubFamilias() {
-        var listaSubFamilias = [];
-        var familiaJS = document.querySelector("#familia").value;
+<#--<script>-->
+    <#--function filtrarSubFamilias() {-->
+        <#--var listaSubFamilias = [];-->
+        <#--var familiaJS = document.querySelector("#familia").value;-->
 
-        <#list familias as familia>
-            <#if familia.subFamilia>
-                var familiaPadreJS = "${familia.familiaPadre.id?string['0']}";
+        <#--<#list familias as familia>-->
+            <#--<#if familia.subFamilia>-->
+                <#--var familiaPadreJS = "${familia.familiaPadre.id?string['0']}";-->
 
-                if (familiaJS == familiaPadreJS) {
-                    listaSubFamilias.push({ id: "${familia.id}", nombre: "${familia.nombre}" });
-                }
-            </#if>
-        </#list>
+                <#--if (familiaJS == familiaPadreJS) {-->
+                    <#--listaSubFamilias.push({ id: "${familia.id}", nombre: "${familia.nombre}" });-->
+                <#--}-->
+            <#--</#if>-->
+        <#--</#list>-->
 
-        document.querySelector("#listaSubFamilias").innerHTML = "";
-        for (var i = 0; i < listaSubFamilias.length; i++) {
-            document.querySelector("#listaSubFamilias").innerHTML += '<option value="' + listaSubFamilias[i].id +'">' + listaSubFamilias[i].nombre +'</option>';
-        }
+        <#--document.querySelector("#listaSubFamilias").innerHTML = "";-->
+        <#--for (var i = 0; i < listaSubFamilias.length; i++) {-->
+            <#--document.querySelector("#listaSubFamilias").innerHTML += '<option value="' + listaSubFamilias[i].id +'">' + listaSubFamilias[i].nombre +'</option>';-->
+        <#--}-->
 
-        console.table(listaSubFamilias);
-    }
-</script>
+        <#--console.table(listaSubFamilias);-->
+    <#--}-->
+<#--</script>-->
 </@base.pagina>
