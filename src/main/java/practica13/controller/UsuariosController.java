@@ -36,7 +36,7 @@ public class UsuariosController {
 
     @PostMapping("/crear/")
     public String crearUsuario(@RequestParam("username") String username, @RequestParam("password") String password, @RequestParam("email") String email, @RequestParam("rol") String rol){
-        Usuario u = new Usuario();
+        Usuario u = new Usuario(1, "admin", "admin", "admin@gmail.com", true, 1);
         u.setUsername(username);
         u.setPassword(password);
         u.setEmail(email);

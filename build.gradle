@@ -48,8 +48,6 @@ dependencies {
     compile('org.springframework.boot:spring-boot-starter-freemarker')
 
 
-
-
 //    // https://mvnrepository.com/artifact/org.vaadin.ui/numberfield
 //    compile group: 'org.vaadin.ui', name: 'numberfield', version: '0.2.0'
     // https://mvnrepository.com/artifact/org.vaadin.addons/numberfield

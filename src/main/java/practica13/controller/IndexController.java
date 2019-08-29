@@ -55,7 +55,7 @@ public class IndexController {
             Rol rol2 = new Rol();
             rol2.setNombreRol("Vendedor");
             rolService.crearRol(rol2);
-            usuarioService.crearUsuario(new Usuario(1, "admin", "admin", "admin@gmail.com", rol));
+            usuarioService.crearUsuario(new Usuario(1, "admin", "admin", "admin@gmail.com", true, 1));
         }
         return "login";
     }
