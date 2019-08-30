@@ -4,64 +4,49 @@ services:
 
   spring:
     image: leonardoaii71/spring:dev
-    deploy:
-      resources:
-        limits:
-          cpus: "0.1"
-      restart_policy:
-        condition: on-failure
-
+    ports:
+      - 8080
     environment:
+      - SERVICE_PORTS=8080
       - SERVER_PORT=8080
-    networks:
-      - webnetwork
-
-    depends_on:
-      - mysqldb
-
-  spring2:
-    image: leonardoaii71/spring:dev
-    hostname: spring2
     deploy:
+      replicas: 2
       resources:
         limits:
-          cpus: "0.1"
-      restart_policy:
-        condition: on-failure
+          cpus: "0.2"
+    networks:
+      - web
+
     depends_on:
       - mysqldb
-    environment:
-      - SERVER_PORT=8085
-    networks:
-      - webnetwork
-
 
 
   haproxy:
-    image: leonardoaii71/ha-proxy:unstable
-    networks:
-      - webnetwork
+    image: dockercloud/haproxy:latest
     depends_on:
       - spring
-      - spring2
-
+    environment:
+      - BALANCE=leastconn
     volumes:
-      - /usr/local/etc/haproxy
+      - /var/run/docker.sock:/var/run/docker.sock
     ports:
-      - "80:80"
-      - "32700:32700"
+      - 80:80
+      - 1936:1936
+    networks:
+      - web
+    deploy:
+      placement:
+        constraints: [node.role == manager]
 
   mysqldb:
-    image: mysql:8
+    image: mysql
     networks:
-      - webnetwork
-    command: --default-authentication-plugin=mysql_native_password
+      - web
     environment:
       - MYSQL_ROOT_PASSWORD=root
       - MYSQL_DATABASE=polls
     ports:
       - 3306:3306
-
     volumes:
       - mysql_db:/var/lib/mysql
 
@@ -69,4 +54,5 @@ volumes:
   mysql_db:
 
 networks:
-  webnetwork:
+  web:
+    driver: overlay
