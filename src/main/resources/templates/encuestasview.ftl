@@ -25,7 +25,7 @@
                         <li><span>Encuestas</span></li>
 
                     </ol>
-                    <a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fa fa-chevron-left"></i></a>
+
                 </div>
             </header>
 
@@ -37,17 +37,17 @@
                         <a href="#" class="fa fa-times"></a>
                     </div>
 
-                    <h2 class="panel-title">"encuestas"</h2>
+                    <h2 class="panel-title">Encuestas</h2>
                 </header>
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="mb-md">
-                                <a class="popup-with-form btn btn-primary" href="#equipo-form">agregar<i class="fa fa-plus"></i></a>
+                                <a class="popup-with-form btn btn-primary" href="#encuesta-form">agregar<i class="fa fa-plus"></i></a>
                             </div>
                         </div>
                         <!-- Categorias Form -->
-                        <form id="equipo-form" class="white-popup-block mfp-hide form-horizontal"
+                        <form id="encuesta-form" class="white-popup-block mfp-hide form-horizontal"
                               action="/encuestas/crear/" method="post" enctype='multipart/form-data'>
                             <div class="row">
                                 <div class="col-sm-12">
@@ -98,7 +98,6 @@
                         </tr>
                         </thead>
                         <tbody>
-
 									<#list encuestas as encuesta>
                                     <tr class="gradeX">
                                         <td>${encuesta.getComentario()}</td>
@@ -117,7 +116,7 @@
             <!-- end: page -->
         </section>
     </div>
-			<#include "sidebar-right.ftl">
+			
 </section>
 
 <div id="dialog" class="modal-block mfp-hide">

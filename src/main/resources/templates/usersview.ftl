@@ -10,7 +10,7 @@
 		<#include "sidebar.ftl">
 		<section role="main" class="content-body">
 			<header class="page-header">
-				<h2><@spring.message "usuarios"/></h2>
+				<h2>usuarios</h2>
 				<div class="right-wrapper pull-right">
 					<ol class="breadcrumbs">
 						<li>
@@ -18,7 +18,7 @@
 								<i class="fa fa-home"></i>
 							</a>
 						</li>
-						<li><span><@spring.message "usuarios"/></span></li>
+						<li><span>usuarios</span></li>
 
 					</ol>
 
@@ -33,13 +33,13 @@
 						<a href="#" class="fa fa-times"></a>
 					</div>
 
-					<h2 class="panel-title"><@spring.message "usuarios"/></h2>
+					<h2 class="panel-title">Usuarios</h2>
 				</header>
 				<div class="panel-body">
 					<div class="row">
 						<div class="col-sm-6">
 							<div class="mb-md">
-								<a class="popup-with-form btn btn-primary" href="#demo-form"><@spring.message "agregar"/> <i class="fa fa-plus"></i></a>
+								<a class="popup-with-form btn btn-primary" href="#demo-form">Agregar<i class="fa fa-plus"></i></a>
 							</div>
 						</div>
 						<!-- Cliente Form -->
@@ -51,19 +51,19 @@
 								</div>
 							</div>
 							<div class="form-group mt-lg">
-								<label class="col-sm-3 control-label"><@spring.message "usuario"/></label>
+								<label class="col-sm-3 control-label">Usuario</label>
 								<div class="col-sm-9">
 									<input type="text" name="username" class="form-control"  required />
 								</div>
 							</div>
 							<div class="form-group mt-lg">
-								<label class="col-sm-3 control-label"><@spring.message "contrasena"/></label>
+								<label class="col-sm-3 control-label">contrase&ncaron;a</label>
 								<div class="col-sm-9">
 									<input type="password" name="password" class="form-control"  required />
 								</div>
 							</div>
 							<div class="form-group mt-lg">
-								<label class="col-sm-3 control-label"><@spring.message "email"/></label>
+								<label class="col-sm-3 control-label">email</label>
 								<div class="col-sm-9">
 									<input type="text" name="email" class="form-control"  required />
 								</div>
@@ -95,19 +95,19 @@
 							</div>
 							<input type="hidden" name="id2" id="id">
 							<div class="form-group mt-lg">
-								<label class="col-sm-3 control-label"><@spring.message "usuario"/></label>
+								<label class="col-sm-3 control-label">Usuario</label>
 								<div class="col-sm-9">
 									<input id="username" type="text" name="username2" class="form-control"  required />
 								</div>
 							</div>
 							<div class="form-group mt-lg">
-								<label class="col-sm-3 control-label"><@spring.message "contrasena"/></label>
+								<label class="col-sm-3 control-label">Contrasena</label>
 								<div class="col-sm-9">
 									<input type="password" name="password2" class="form-control"  required />
 								</div>
 							</div>
 							<div class="form-group mt-lg">
-								<label class="col-sm-3 control-label"><@spring.message "email"/></label>
+								<label class="col-sm-3 control-label">email</label>
 								<div class="col-sm-9">
 									<input type="text" id="email" name="email2" class="form-control"  required />
 								</div>
@@ -134,11 +134,11 @@
 					<table class="table table-bordered table-striped mb-none" id="datatable-editable">
 						<thead>
 						<tr>
-							<th class="text-center"><@spring.message "usuario"/></th>
-							<th class="text-center"><@spring.message "contrasena"/></th>
-							<th class="text-center"><@spring.message "email"/></th>
+							<th class="text-center"> usuario</th>
+							<th class="text-center"> contrasena</th>
+							<th class="text-center"> email</th>
 							<th class="text-center">Rol</th>
-							<th class="text-center"><@spring.message "opciones"/></th>
+							<th class="text-center"> opciones</th>
 						</tr>
 						</thead>
 						<tbody>
@@ -164,7 +164,6 @@
 			<!-- end: page -->
 		</section>
 	</div>
-	<#include "sidebar-right.ftl">
 </section>
 
 <#include "footer.ftl">

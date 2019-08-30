@@ -53,7 +53,7 @@
 
 		<section role="main" class="content-body">
 			<header class="page-header">
-				<h2><@spring.message "dashboard"/></h2>
+				<h2>dashboard</h2>
 
 				<div class="right-wrapper pull-right">
 					<ol class="breadcrumbs">
@@ -62,7 +62,7 @@
 								<i class="fa fa-home"></i>
 							</a>
 						</li>
-						<li><span><@spring.message "dashboard"/></span></li>
+						<li><span>dashboard</span></li>
 					</ol>
 				</div>
 			</header>
@@ -81,12 +81,12 @@
 						<div class="panel-body">
 							<div class="row">
 								<div class="form-group mt-lg">
-									<label class="col-sm-3 form-control-label"><@spring.message "encuesta"/></label>
+									<label class="col-sm-3 form-control-label">encuesta</label>
 									<div class="col-sm-9">
 										<select id="encuesta" name="encuesta" class="form-control"
 												style="width: 100%;" tabindex="-1" aria-hidden="true"
 												required>
-											<option selected="selected"><@spring.message "SelectEncuesta"/></option>
+											<option selected="selected">Seleccionar Encuesta</option>
 											<#list encuestas as encuesta>
 												<option value="${encuesta.getId()}">${encuesta.getComentario()} </option>
 											</#list>
