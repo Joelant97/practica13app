@@ -15,8 +15,8 @@ import java.util.Properties;
 
 @SpringBootApplication(exclude = {SecurityAutoConfiguration.class})
 public class Practica13App extends SpringBootServletInitializer {
-    @Autowired
-    public EmailServiceImpl emailService;
+    public static final String USE_HAZELCAST = "true";
+
 
     public static void main(String[] args) {
 

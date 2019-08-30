@@ -37,7 +37,7 @@ public class EncuestaController {
     private UsuarioService usuarioService;
 
     @GetMapping("/")
-    public String equipos(Model model)
+    public String encuestas(Model model)
     {
         List<Encuesta> encuestas = new ArrayList<>();
         encuestas = encuestaService.listarEncuestas();
@@ -127,7 +127,7 @@ public class EncuestaController {
 
 
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
-    public String borrarEquipo(@PathVariable String id) {
+    public String borrarEncuesta(@PathVariable String id) {
         Encuesta encuesta = encuestaService.encontrarEncuestaPorId(Long.parseLong(id));
         encuestaService.borrarEncuesta(encuesta);
         return "redirect:/encuestas/";

@@ -1,13 +1,6 @@
 package practica13.Views;
 
-import com.vaadin.flow.component.html.H3;
-import com.vaadin.flow.component.orderedlayout.VerticalLayout;
-import com.vaadin.flow.component.textfield.PasswordField;
-import com.vaadin.flow.component.textfield.TextField;
-import com.vaadin.flow.router.BeforeEnterEvent;
-import com.vaadin.flow.router.BeforeEnterObserver;
-import com.vaadin.flow.router.Route;
-import com.vaadin.flow.server.VaadinSession;
+
 import practica13.Models.Usuario;
 import practica13.Services.UsuarioService;
 import practica13.Utils.email.EmailService;
@@ -18,7 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.awt.*;
 import java.security.SecureRandom;
 import java.util.Random;
-
+/*
 @Route("")
 public class LogIn extends VerticalLayout implements BeforeEnterObserver {
 
@@ -177,4 +170,4 @@ public class LogIn extends VerticalLayout implements BeforeEnterObserver {
     }
     }
 
-}
+}*/
