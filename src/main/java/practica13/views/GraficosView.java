@@ -1,24 +1,11 @@
-package arkham.knight.practica13.views;
+
 
 import practica13.Models.Encuesta;
 import practica13.Models.Usuario;
 import practica13.Services.EncuestaService;
-import com.vaadin.flow.component.button.Button;
-import com.vaadin.flow.component.charts.Chart;
-import com.vaadin.flow.component.charts.model.*;
-import com.vaadin.flow.component.dialog.Dialog;
-import com.vaadin.flow.component.grid.Grid;
-import com.vaadin.flow.component.html.H1;
-import com.vaadin.flow.component.html.H3;
-import com.vaadin.flow.component.icon.VaadinIcon;
-import com.vaadin.flow.component.orderedlayout.VerticalLayout;
-import com.vaadin.flow.router.BeforeEnterEvent;
-import com.vaadin.flow.router.BeforeEnterObserver;
-import com.vaadin.flow.router.Route;
-import com.vaadin.flow.server.VaadinSession;
 import org.springframework.beans.factory.annotation.Autowired;
 
-
+/*
 @Route("graphs")
 public class GraficosView extends VerticalLayout implements BeforeEnterObserver {
     public GraficosView(@Autowired EncuestaService encuestaService) {
@@ -138,4 +125,4 @@ public class GraficosView extends VerticalLayout implements BeforeEnterObserver 
             event.forwardTo("encuesta");
         }
     }
-}
+}*/

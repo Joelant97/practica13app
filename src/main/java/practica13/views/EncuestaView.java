@@ -3,23 +3,10 @@ package practica13.views;
 import practica13.Models.Encuesta;
 import practica13.Models.Usuario;
 import practica13.Services.EncuestaService;
-import com.vaadin.flow.component.button.Button;
-import com.vaadin.flow.component.html.H1;
-import com.vaadin.flow.component.icon.VaadinIcon;
-import com.vaadin.flow.component.notification.Notification;
-import com.vaadin.flow.component.orderedlayout.VerticalLayout;
-
-import com.vaadin.flow.component.textfield.NumberField;
-import com.vaadin.flow.component.textfield.TextField;
-import com.vaadin.flow.router.BeforeEnterEvent;
-import com.vaadin.flow.router.BeforeEnterObserver;
-import com.vaadin.flow.router.Route;
-import com.vaadin.flow.server.VaadinSession;
-//import de.essendi.vaadin.ui.component.numberfield.NumberField;
 import org.springframework.beans.factory.annotation.Autowired;
-//import org.vaadin.ui.NumberField;
 
 
+/*
 @Route("encuesta")
 public class EncuestaView extends VerticalLayout implements BeforeEnterObserver {
     public EncuestaView(@Autowired EncuestaService encuestaService) {
@@ -92,4 +79,4 @@ public class EncuestaView extends VerticalLayout implements BeforeEnterObserver 
         if (VaadinSession.getCurrent().getSession().getAttribute("usuario") == null)
             event.forwardTo("");
     }
-}
+}*/

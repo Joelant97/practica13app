@@ -4,3 +4,7 @@ pluginManagement {
     }
 }
 rootProject.name = 'practica13app'
+
+
+enableFeaturePreview('IMPROVED_POM_SUPPORT')
+

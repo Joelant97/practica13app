@@ -3,30 +3,12 @@ package practica13.views;
 import practica13.Models.Usuario;
 import practica13.Services.UsuarioService;
 import practica13.Utils.email.EmailService;
-import com.vaadin.flow.component.Text;
-import com.vaadin.flow.component.button.Button;
-import com.vaadin.flow.component.dialog.Dialog;
-import com.vaadin.flow.component.html.H1;
-import com.vaadin.flow.component.html.H3;
-import com.vaadin.flow.component.icon.Icon;
-import com.vaadin.flow.component.icon.VaadinIcon;
-import com.vaadin.flow.component.notification.Notification;
-import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
-import com.vaadin.flow.component.orderedlayout.VerticalLayout;
-import com.vaadin.flow.component.textfield.EmailField;
-import com.vaadin.flow.component.textfield.PasswordField;
-import com.vaadin.flow.component.textfield.TextField;
-import com.vaadin.flow.router.BeforeEnterEvent;
-import com.vaadin.flow.router.BeforeEnterObserver;
-import com.vaadin.flow.router.Route;
-import com.vaadin.flow.server.VaadinSession;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import arkham.knight.practica13.views.GraficosView;
 
 import java.security.SecureRandom;
 import java.util.Random;
-
+ /*
 @Route("")
 public class LogIn extends VerticalLayout implements BeforeEnterObserver {
 
@@ -173,4 +155,4 @@ public class LogIn extends VerticalLayout implements BeforeEnterObserver {
             event.forwardTo("encuesta");
         }
     }
-}
+}               */
