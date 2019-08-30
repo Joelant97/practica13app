@@ -95,11 +95,11 @@ public class EncuestaController {
     }
 
     @PostMapping("/modificar/")
-    public String modificarEncuesta(@PathVariable String id,
-                                    @RequestParam("cumplieronExpectativas") int cumplieronExpectativas,
-                                    @RequestParam("dominioDelTema") int dominioDelTema,
-                                    @RequestParam("instalacionesConfortables") int instalacionesConfortables,
-                                    @RequestParam("comentario") String comentario,
+    public String modificarEncuesta(@RequestParam("id2") String id,
+                                    @RequestParam("cumplieronExpectativas2") int cumplieronExpectativas,
+                                    @RequestParam("dominioDelTema2") int dominioDelTema,
+                                    @RequestParam("instalacionesConfortables2") int instalacionesConfortables,
+                                    @RequestParam("comentario2") String comentario,
                                     RedirectAttributes redirectAttributes) {
 
         Encuesta encuesta = encuestaService.encontrarEncuestaPorId(Long.parseLong(id));
