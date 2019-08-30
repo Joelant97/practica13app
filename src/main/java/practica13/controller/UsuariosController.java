@@ -26,7 +26,7 @@ public class UsuariosController {
     public String usuarios(Model model)
     {
         List<Usuario> usuarios = new ArrayList<>();
-        usuarios = usuarioService.listarUsuarios();
+        usuarios = usuarioService.buscarTodosUsuarios();
         List<Rol> roles = rolService.buscarTodosRoles();
         model.addAttribute("usuarios", usuarios);
         model.addAttribute("roles", roles);
@@ -50,7 +50,7 @@ public class UsuariosController {
 
     @PostMapping("/modificar/")
     public String modificarUsuario(@RequestParam("username2") String username, @RequestParam("id2") String id,@RequestParam("password2") String password, @RequestParam("email2") String email, @RequestParam("rol2") String rol){
-        Usuario u = usuarioService.encontrarUsuarioPorId(Long.parseLong(id));
+        Usuario u = usuarioService.buscarPorId(Long.parseLong(id));
         Rol r = rolService.findByNombreRol(rol);
         u.setRol(r);
         u.setUsername(username);
