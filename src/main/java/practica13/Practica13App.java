@@ -14,15 +14,13 @@ import practica13.Utils.email.EmailServiceImpl;
 
 import java.util.Properties;
 
+
+
 //@SpringBootApplication
 //public class Practica13App {
-//
-//
 //    public static void main(String[] args) {
 //        ApplicationContext applicationContext = SpringApplication.run(Practica13App.class, args);
-//
 //    }
-//
 //
 //}
 
