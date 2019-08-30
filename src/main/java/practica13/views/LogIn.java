@@ -5,11 +5,11 @@ import practica13.Services.UsuarioService;
 import practica13.Utils.email.EmailService;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import arkham.knight.practica13.views.GraficosView;
+//import arkham.knight.practica13.views.GraficosView;
 
 import java.security.SecureRandom;
 import java.util.Random;
-
+/*
 @Route("")
 public class LogIn extends VerticalLayout implements BeforeEnterObserver {
 
@@ -157,3 +157,4 @@ public class LogIn extends VerticalLayout implements BeforeEnterObserver {
         }
     }
 }
+*/
