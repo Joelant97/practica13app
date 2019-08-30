@@ -22,7 +22,7 @@
                                 <i class="fa fa-home"></i>
                             </a>
                         </li>
-                        <li><span><@spring.message "encuestas"/></span></li>
+                        <li><span>Encuestas</span></li>
 
                     </ol>
                     <a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fa fa-chevron-left"></i></a>
@@ -37,13 +37,13 @@
                         <a href="#" class="fa fa-times"></a>
                     </div>
 
-                    <h2 class="panel-title"><@spring.message "encuestas"/></h2>
+                    <h2 class="panel-title">"encuestas"</h2>
                 </header>
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="mb-md">
-                                <a class="popup-with-form btn btn-primary" href="#equipo-form"><@spring.message "agregar"/> <i class="fa fa-plus"></i></a>
+                                <a class="popup-with-form btn btn-primary" href="#equipo-form">agregar<i class="fa fa-plus"></i></a>
                             </div>
                         </div>
                         <!-- Categorias Form -->
@@ -93,8 +93,8 @@
                     <table class="table table-bordered table-striped mb-none" id="datatable-editable">
                         <thead>
                         <tr>
-                            <th><@spring.message "nombre"/></th>
-                            <th><@spring.message "acciones"/></th>
+                            <th>Nombre</th>
+                            <th>Acciones</th>
                         </tr>
                         </thead>
                         <tbody>

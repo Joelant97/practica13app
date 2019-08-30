@@ -51,15 +51,7 @@ public class EncuestaController {
                               @RequestParam("instalacionesConfortables") int instalacionesConfortables,
                               @RequestParam("comentario") String comentario,
                               RedirectAttributes redirectAttributes) {
-
-
-
-
-
-
         Encuesta encuesta = new Encuesta();
-
-
 
         encuesta.setComentario(comentario);
         encuesta.setCumplieronExpectativas(cumplieronExpectativas);

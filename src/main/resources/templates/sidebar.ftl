@@ -16,13 +16,13 @@
                     <li>
                         <a href="/">
                             <i class="fa fa-home" aria-hidden="true"></i>
-                            <span><@spring.message "home"/></span>
+                            <span>"home"</span>
                         </a>
                     </li>
                     <li>
                         <a href="/usuarios/">
                             <i class="fa fa-user" aria-hidden="true"></i>
-                            <span><@spring.message "usuarios"/></span>
+                            <span>"usuarios"</span>
                         </a>
                     </li>
                     <#--<li>-->
@@ -46,7 +46,7 @@
                     <li>
                         <a href="/encuestas/">
                             <i class="fa fa-table" aria-hidden="true"></i>
-                            <span><@spring.message "encuestas"/></span>
+                            <span>"encuestas"</span>
                         </a>
                     </li>
                     <#--<li class="nav-parent">-->
