@@ -5,10 +5,11 @@ import practica13.Services.UsuarioService;
 import practica13.Utils.email.EmailService;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import arkham.knight.practica13.views.GraficosView;
 
 import java.security.SecureRandom;
 import java.util.Random;
- /*
+
 @Route("")
 public class LogIn extends VerticalLayout implements BeforeEnterObserver {
 
@@ -25,12 +26,12 @@ public class LogIn extends VerticalLayout implements BeforeEnterObserver {
     public LogIn(@Autowired UsuarioService usuarioServices) {
 
         if (usuarioServices.listarUsuarios().size() == 0) {
-            Usuario admin = new Usuario();
+            Usuario admin = new Usuario(1, "admin", "admin", "admin@gmail.com", true, 1);
             admin.setUsername("admin");
             admin.setPassword("admin");
             admin.setAdmin(true);
             usuarioServices.crearUsuario(admin);
-            Usuario usuario = new Usuario();
+            Usuario usuario = new Usuario(1, "admin", "admin", "admin@gmail.com", true, 1);
             usuario.setUsername("usuario");
             usuario.setPassword("1234");
             usuario.setAdmin(false);
@@ -118,7 +119,7 @@ public class LogIn extends VerticalLayout implements BeforeEnterObserver {
                 "El usuario ya existe", 3000);
         registrarse.addClickListener(event -> {
             dialog.close();
-            Usuario nuevoUsuario = new Usuario();
+            Usuario nuevoUsuario = new Usuario(1, "admin", "admin", "admin@gmail.com", true, 1);
             nuevoUsuario.setAdmin(false);
             nuevoUsuario.setUsername(usuarioField.getValue());
             nuevoUsuario.setPassword(generatePassword());
@@ -155,4 +156,4 @@ public class LogIn extends VerticalLayout implements BeforeEnterObserver {
             event.forwardTo("encuesta");
         }
     }
-}               */
+}

@@ -34,9 +34,20 @@ public class EncuestaService {
         encuestaRepo.delete(encuestaToDelete);
     }
 
+    public void actualizarEncuesta(Encuesta encuesta){
+//        Encuesta encuestaToUpdate = encuestaRepo.findEncuestaById(id);
+        encuestaRepo.saveAndFlush(encuesta);
+    }
+    public void borrarEncuesta(Encuesta encuesta) {
+        encuestaRepo.delete(encuesta);
+    }
+
     public void  borrarTodasLasEncuestas(){
 
         encuestaRepo.deleteAll();
     }
+
+
+
 
 }

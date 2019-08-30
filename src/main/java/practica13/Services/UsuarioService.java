@@ -60,4 +60,9 @@ public class UsuarioService implements UserDetailsService {
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         return null;
     }
+
+    public void actualizarUsuario(Usuario u) {
+
+        usuarioRepo.saveAndFlush(u);
+    }
 }
