@@ -10,7 +10,7 @@ import practica13.Models.Rol;
 import practica13.Models.Usuario;
 import practica13.Services.EncuestaService;
 import practica13.Services.RolServiceImpl;
-import practica13.Services.UsuarioService;
+import practica13.Services.UsuarioServiceImpl;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.HashSet;
@@ -22,7 +22,7 @@ import java.util.Set;
 public class IndexController {
 
     @Autowired
-    private UsuarioService usuarioService;
+    private UsuarioServiceImpl usuarioService;
 
     @Autowired
     private EncuestaService encuestaService;
@@ -47,7 +47,7 @@ public class IndexController {
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String loginGET(Model model) {
 
-        if(usuarioService.listarUsuarios().size() == 0) {
+        if(usuarioService.buscarTodosUsuarios().size() == 0) {
             Set<Rol> roles = new HashSet<>();
             Rol rol = new Rol();
             rol.setNombreRol("ADMIN");
@@ -66,7 +66,7 @@ public class IndexController {
             @RequestParam(value = "username", required = false) String username,
             @RequestParam(value = "password", required = false) String password
     ) {
-        usuarioService.login(username, password);
+        usuarioService.autoLogin(username, password);
 
         return "redirect:/";
     }

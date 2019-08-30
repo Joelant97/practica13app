@@ -4,7 +4,7 @@
 
 	<!-- Basic -->
 	<meta charset="UTF-8">
-	<title>Dashboard</title>
+	<title>App de Encuestas</title>
 	<meta name="keywords" content="HTML5 Admin Template" />
 	<meta name="description" content="JSOFT Admin - Responsive HTML5 Template">
 	<meta name="author" content="JSOFT.net">
@@ -75,20 +75,20 @@
 								<a href="#" class="fa fa-times"></a>
 							</div>
 
-							<h2 class="panel-title">Promedios de dias alquilados por subfamilia</h2>
-							<p class="panel-subtitle">Seleccione una categoria para ver los promedios de dias de alquiler de cada subfamilia</p>
+							<h2 class="panel-title">Lista de Encuestas</h2>
+							<p class="panel-subtitle">Seleccione una encuesta para ver resultados</p>
 						</header>
 						<div class="panel-body">
 							<div class="row">
 								<div class="form-group mt-lg">
-									<label class="col-sm-3 form-control-label"><@spring.message "categoria"/></label>
+									<label class="col-sm-3 form-control-label"><@spring.message "encuesta"/></label>
 									<div class="col-sm-9">
-										<select id="categoria" name="categoria" class="form-control"
+										<select id="encuesta" name="encuesta" class="form-control"
 												style="width: 100%;" tabindex="-1" aria-hidden="true"
 												required>
-											<option selected="selected"><@spring.message "SelectCategoria"/></option>
-											<#list categorias as categoria>
-												<option value="${categoria.getId()}">${categoria.getNombreCategoria()} </option>
+											<option selected="selected"><@spring.message "SelectEncuesta"/></option>
+											<#list encuestas as encuesta>
+												<option value="${encuesta.getId()}">${encuesta.getComentario()} </option>
 											</#list>
 										</select>
 									</div>
