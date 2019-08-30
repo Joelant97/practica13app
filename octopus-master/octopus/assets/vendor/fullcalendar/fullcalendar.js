@@ -5755,8 +5755,8 @@ function View(element, calendar, viewName) {
 	// ====================================================================================================
 	// Utilities for day "cells"
 	// ====================================================================================================
-	// The "basic" views are completely made up of day cells.
-	// The "agenda" views have day cells at the top "all day" slot.
+	// The "basic" Views are completely made up of day cells.
+	// The "agenda" Views have day cells at the top "all day" slot.
 	// This was the obvious common place to put these utilities, but they should be abstracted out into
 	// a more meaningful class (like DayEventRenderer).
 	// ====================================================================================================
@@ -6383,7 +6383,7 @@ function DayEventRenderer() {
 			}
 		}
 
-		// Get each row's top, relative to the views's origin.
+		// Get each row's top, relative to the Views's origin.
 		// Important to do this after setting each row's height.
 		for (i=0; i<rowContentElements.length; i++) {
 			rowContentTops.push(
@@ -6396,7 +6396,7 @@ function DayEventRenderer() {
 		segmentElementEach(segments, function(segment, element) {
 			element.css(
 				'top',
-				rowContentTops[segment.row] + segment.top // ...now, relative to views's origin
+				rowContentTops[segment.row] + segment.top // ...now, relative to Views's origin
 			);
 		});
 	}

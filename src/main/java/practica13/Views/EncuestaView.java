@@ -1,9 +1,4 @@
-package practica13.views;
-
-import practica13.Models.Encuesta;
-import practica13.Models.Usuario;
-import practica13.Services.EncuestaService;
-import org.springframework.beans.factory.annotation.Autowired;
+package practica13.Views;
 
 
 /*
