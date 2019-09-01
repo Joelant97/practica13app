@@ -48,9 +48,9 @@ public class EncuestaController {
     }
 
     @PostMapping("/crear/")
-    public String crearEncuesta(@RequestParam("cumplieronExpectativas") int cumplieronExpectativas,
-                              @RequestParam("dominioDelTema") int dominioDelTema,
-                              @RequestParam("instalacionesConfortables") int instalacionesConfortables,
+    public String crearEncuesta(@RequestParam("cumplieronExpectativas") String cumplieronExpectativas,
+                              @RequestParam("dominioDelTema") String dominioDelTema,
+                              @RequestParam("instalacionesConfortables") String instalacionesConfortables,
                               @RequestParam("comentario") String comentario,
                               RedirectAttributes redirectAttributes) {
         Encuesta encuesta = new Encuesta();
@@ -88,9 +88,9 @@ public class EncuestaController {
 
     @PostMapping("/modificar/")
     public String modificarEncuesta(@RequestParam("id2") String id,
-                                    @RequestParam("cumplieronExpectativas2") int cumplieronExpectativas,
-                                    @RequestParam("dominioDelTema2") int dominioDelTema,
-                                    @RequestParam("instalacionesConfortables2") int instalacionesConfortables,
+                                    @RequestParam("cumplieronExpectativas2") String cumplieronExpectativas,
+                                    @RequestParam("dominioDelTema2") String dominioDelTema,
+                                    @RequestParam("instalacionesConfortables2") String instalacionesConfortables,
                                     @RequestParam("comentario2") String comentario,
                                     RedirectAttributes redirectAttributes) {
 

@@ -46,7 +46,7 @@
                                 <a class="popup-with-form btn btn-primary" href="#encuesta-form">agregar<i class="fa fa-plus"></i></a>
                             </div>
                         </div>
-                        <!-- Categorias Form -->
+                        <!-- Encuestas Form -->
                         <form id="encuesta-form" class="white-popup-block mfp-hide form-horizontal"
                               action="/encuestas/crear/" method="post" enctype='multipart/form-data'>
                             <div class="row">
@@ -55,21 +55,42 @@
                                 </div>
                             </div>
                             <div class="form-group mt-lg">
-                                <label class="col-sm-3 control-label">Cumplieron con las Expectativas?</label>
-                                <div class="col-sm-9">
-                                    <input type="text" name="cumplieronExpectativas" class="form-control"  required />
+                                <label class="col-sm-3 control-label">Cumplieron con las Expectativas?(Nivel:1 al 5)</label>
+                                <div class="col-sm-6">
+                                    <#--<input type="text" name="cumplieronExpectativas" class="form-control"  required />-->
+                                    <select type="text" name="cumplieronExpectativas" class="form-control"  required >
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                    </select>
                                 </div>
                             </div>
                             <div class="form-group mt-lg">
-                                <label class="col-sm-3 control-label">Tienen dominio del Tema?</label>
-                                <div class="col-sm-9">
-                                    <input type="number" name="dominioDelTema" class="form-control"  required />
+                                <label class="col-sm-3 control-label">Tienen dominio del Tema?(Nivel:1 al 5)</label>
+                                <div class="col-sm-6">
+                                    <#--<input type="text" name="dominioDelTema" class="form-control"  required />-->
+                                    <select type="text" name="dominioDelTema" class="form-control"  required >
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                    </select>
                                 </div>
                             </div>
                             <div class="form-group mt-lg">
-                                <label class="col-sm-3 control-label">Las instalaciones son confortables?</label>
-                                <div class="col-sm-9">
-                                    <input type="number" name="instalacionesConfortables" class="form-control"  required />
+                                <label class="col-sm-3 control-label">Las instalaciones son confortables?(Nivel:1 al 5)</label>
+                                <div class="col-sm-6">
+                                    <#--<input type="text" name="instalacionesConfortables" class="form-control"  required />-->
+                                    <select type="text" name="instalacionesConfortables" class="form-control"  required >
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                    </select>
                                 </div>
                             </div>
                             <div class="form-group mt-lg">
