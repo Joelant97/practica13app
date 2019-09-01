@@ -11,13 +11,13 @@ public class Encuesta {
     @GeneratedValue
     private Long id;
 
-    private int cumplieronExpectativas;
-    private int dominioDelTema;
-    private int instalacionesConfortables;
+    private String cumplieronExpectativas;
+    private String dominioDelTema;
+    private String instalacionesConfortables;
     private String comentario;
 
 
-    public Encuesta(int cumplieronExpectativas, int dominioDelTema, int instalacionesConfortables, String comentario) {
+    public Encuesta(String cumplieronExpectativas, String dominioDelTema, String instalacionesConfortables, String comentario) {
         this.cumplieronExpectativas = cumplieronExpectativas;
         this.dominioDelTema = dominioDelTema;
         this.instalacionesConfortables = instalacionesConfortables;
@@ -35,27 +35,27 @@ public class Encuesta {
         this.id = id;
     }
 
-    public int getCumplieronExpectativas() {
+    public String getCumplieronExpectativas() {
         return cumplieronExpectativas;
     }
 
-    public void setCumplieronExpectativas(int cumplieronExpectativas) {
+    public void setCumplieronExpectativas(String cumplieronExpectativas) {
         this.cumplieronExpectativas = cumplieronExpectativas;
     }
 
-    public int getDominioDelTema() {
+    public String getDominioDelTema() {
         return dominioDelTema;
     }
 
-    public void setDominioDelTema(int dominioDelTema) {
+    public void setDominioDelTema(String dominioDelTema) {
         this.dominioDelTema = dominioDelTema;
     }
 
-    public int getInstalacionesConfortables() {
+    public String getInstalacionesConfortables() {
         return instalacionesConfortables;
     }
 
-    public void setInstalacionesConfortables(int instalacionesConfortables) {
+    public void setInstalacionesConfortables(String instalacionesConfortables) {
         this.instalacionesConfortables = instalacionesConfortables;
     }
 

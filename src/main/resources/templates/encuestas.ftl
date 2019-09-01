@@ -8,16 +8,16 @@
     <link rel="stylesheet" href="/css/login.css"/>
     <title>${titulo}</title>
 </head>
-<body onload="filtrarSubFamilias()">
+<body onload="listarEncuestas()">
 <div class="login-form">
     <main class="mx-auto mt-2">
         <div class="panel">
             <h3>${tituloCrearEncuesta}</h3>
             <h6>${mensajeCrearEncuesta}</h6>
         </div>
-        <form id="agregarCliente" method="POST" action="/encuestas/crear/">
+        <form id="agregarEncuesta" method="POST" action="/encuestas/crear/">
             <div class="form-group">
-                <input type="text" class="form-control" name="nombre" placeholder="${placeholderComentarioEncuesta}"
+                <input type="text" class="form-control" name="comentario" placeholder="${placeholderComentarioEncuesta}"
                        required/>
             </div>
             <div class="input-group mb-3">

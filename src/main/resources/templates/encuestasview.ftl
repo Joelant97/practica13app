@@ -56,20 +56,32 @@
                             </div>
                             <div class="form-group mt-lg">
                                 <label class="col-sm-3 control-label">Cumplieron con las Expectativas?</label>
-                                <div class="col-sm-9">
-                                    <input type="text" name="cumplieronExpectativas" class="form-control"  required />
+                                <div class="col-sm-6">
+                                    <#--<input type="text" name="cumplieronExpectativas" class="form-control"  required />-->
+                                    <select type="text" name="cumplieronExpectativas" class="form-control"  required >
+                                        <option value="si">Si</option>
+                                        <option value="no">No</option>
+                                    </select>
                                 </div>
                             </div>
                             <div class="form-group mt-lg">
                                 <label class="col-sm-3 control-label">Tienen dominio del Tema?</label>
-                                <div class="col-sm-9">
-                                    <input type="number" name="dominioDelTema" class="form-control"  required />
+                                <div class="col-sm-6">
+                                    <#--<input type="text" name="dominioDelTema" class="form-control"  required />-->
+                                    <select type="text" name="dominioDelTema" class="form-control"  required >
+                                        <option value="si">Si</option>
+                                        <option value="no">No</option>
+                                    </select>
                                 </div>
                             </div>
                             <div class="form-group mt-lg">
                                 <label class="col-sm-3 control-label">Las instalaciones son confortables?</label>
-                                <div class="col-sm-9">
-                                    <input type="number" name="instalacionesConfortables" class="form-control"  required />
+                                <div class="col-sm-6">
+                                    <#--<input type="text" name="instalacionesConfortables" class="form-control"  required />-->
+                                    <select type="text" name="instalacionesConfortables" class="form-control"  required >
+                                        <option value="si">Si</option>
+                                        <option value="no">No</option>
+                                    </select>
                                 </div>
                             </div>
                             <div class="form-group mt-lg">
