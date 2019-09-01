@@ -10,11 +10,14 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.server.ResponseStatusException;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import practica13.Models.Encuesta;
+import practica13.Models.Usuario;
 import practica13.Services.EncuestaService;
 import practica13.Services.UsuarioService;
+import practica13.Services.UsuarioServiceImpl;
 
 
 import java.io.IOException;
+import java.nio.file.AccessDeniedException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -29,15 +32,14 @@ public class EncuestaController {
 
     private static String UPLOADED_FOLDER = "/img/";
 
-
     @Autowired
     private EncuestaService encuestaService;
 
     @Autowired
-    private UsuarioService usuarioService;
+    private UsuarioServiceImpl usuarioService;
 
-    @GetMapping("/")
-    public String encuestas(Model model)
+    @GetMapping("/{uid}")
+    public String encuestas(Model model, @PathVariable("uid") Long uid)
     {
         List<Encuesta> encuestas = new ArrayList<>();
         encuestas = encuestaService.listarEncuestas();
@@ -52,7 +54,6 @@ public class EncuestaController {
                               @RequestParam("comentario") String comentario,
                               RedirectAttributes redirectAttributes) {
         Encuesta encuesta = new Encuesta();
-
         encuesta.setComentario(comentario);
         encuesta.setCumplieronExpectativas(cumplieronExpectativas);
         encuesta.setDominioDelTema(dominioDelTema);
@@ -66,7 +67,6 @@ public class EncuestaController {
     public String ver(Model model, @PathVariable String id)
     {
         Encuesta encuesta = encuestaService.encontrarEncuestaPorId(Long.parseLong(id));
-
         model.addAttribute("encuesta", encuesta);
         return "verencuesta";
     }

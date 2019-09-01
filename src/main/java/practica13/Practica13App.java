@@ -33,6 +33,7 @@ public class Practica13App extends SpringBootServletInitializer {
     public static void main(String[] args) {
 
         SpringApplication.run(Practica13App.class, args);
+
     }
 
     @Bean

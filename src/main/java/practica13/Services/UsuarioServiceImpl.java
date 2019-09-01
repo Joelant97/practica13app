@@ -17,7 +17,6 @@ import practica13.Services.SecurityService;
 import java.util.List;
 
 @Service("usuarioService")
-
 public class UsuarioServiceImpl implements UsuarioService, SecurityService {
 
     @Autowired
@@ -33,9 +32,9 @@ public class UsuarioServiceImpl implements UsuarioService, SecurityService {
     private BCryptPasswordEncoder bCryptPasswordEncoder;
 
     @Transactional
-    public void crearUsuario(Usuario usuario){
+    public Usuario crearUsuario(Usuario usuario){
         usuario.setPassword(bCryptPasswordEncoder.encode(usuario.getPassword()));
-        usuarioRepository.save(usuario);
+        return usuarioRepository.save(usuario);
     }
 
     @Autowired
@@ -54,7 +53,8 @@ public class UsuarioServiceImpl implements UsuarioService, SecurityService {
 
     public void autoLogin(String username, String password) {
         UserDetails userDetails = userDetailsService.loadUserByUsername(username);
-        UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken = new UsernamePasswordAuthenticationToken(userDetails, password, userDetails.getAuthorities());
+        UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken =
+                new UsernamePasswordAuthenticationToken(userDetails, password, userDetails.getAuthorities());
 
         authenticationManager.authenticate(usernamePasswordAuthenticationToken);
 

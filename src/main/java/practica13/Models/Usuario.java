@@ -42,6 +42,10 @@ public class Usuario implements Serializable {
 
     }
 
+    public Usuario() {
+
+    }
+
 //    public Long getId() {
 //        return id;
 //    }
@@ -112,7 +116,9 @@ public class Usuario implements Serializable {
         this.deleted = deleted;
     }
 
-
+    public long getId() {
+        return id;
+    }
 }
 
 

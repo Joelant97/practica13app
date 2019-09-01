@@ -1,5 +1,14 @@
 package practica13.Utils.email;
 
+import com.mailjet.client.errors.MailjetException;
+import com.mailjet.client.errors.MailjetSocketTimeoutException;
+import com.mailjet.client.MailjetClient;
+import com.mailjet.client.MailjetRequest;
+import com.mailjet.client.MailjetResponse;
+import com.mailjet.client.ClientOptions;
+import com.mailjet.client.resource.Emailv31;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.FileSystemResource;
@@ -17,14 +26,13 @@ import java.util.Properties;
 @Component
 public class EmailServiceImpl implements EmailService {
 
+    final String APIKey = "ee3d1ce4b3b4d90fec2657fe1911b146";
+    final String SecretKey = "820b090f83e75d13fcac862a6808a634";
+
     @Autowired
     public JavaMailSender emailSender;
 
     public void sendSimpleMessage(String to, String subject, String text) {
-
-        final String APIKey = "ee3d1ce4b3b4d90fec2657fe1911b146";
-        final String SecretKey = "820b090f83e75d13fcac862a6808a634";
-
         Properties props = new Properties ();
 
         props.put ("mail.smtp.host", "in.mailjet.com");
@@ -41,10 +49,8 @@ public class EmailServiceImpl implements EmailService {
                         return new PasswordAuthentication (APIKey, SecretKey);
                     }
                 });
-
         try
         {
-
             Message message = new MimeMessage (session);
             message.setFrom (new InternetAddress("leonardoaii71@gmail.com"));
             message.setRecipients (Message.RecipientType.TO, InternetAddress.parse(to));
@@ -53,9 +59,6 @@ public class EmailServiceImpl implements EmailService {
             message.setText ("Your mail from Mailjet, sent by Java.");
             message.addHeader("X-MJ-TemplateID", "978112");
             message.addHeader("X-MJ-TemplateLanguage", "true");
-            message.addHeader("X-MJ-Vars", "{'firstname':'el leo pa',}");
-
-
 
             Transport.send (message);
 
@@ -66,6 +69,33 @@ public class EmailServiceImpl implements EmailService {
         }
 
     }
+
+    public void sendSimpleMessageApi(String to, String name, String subject, String link) throws
+        MailjetException, MailjetSocketTimeoutException {
+            MailjetClient client;
+            MailjetRequest request;
+            MailjetResponse response;
+            client = new MailjetClient(System.getenv(APIKey), System.getenv(SecretKey), new ClientOptions("v3.1"));
+            request = new MailjetRequest(Emailv31.resource)
+                    .property(Emailv31.MESSAGES, new JSONArray()
+                            .put(new JSONObject()
+                                    .put(Emailv31.Message.FROM, new JSONObject()
+                                            .put("Email", "20121917@ce.pucmm.edu.do")
+                                            .put("Name", "PUCMM"))
+                                    .put(Emailv31.Message.TO, new JSONArray()
+                                            .put(new JSONObject()
+                                                    .put("Email", to)
+                                                    .put("Name", name)))
+                                    .put(Emailv31.Message.TEMPLATEID, 978112)
+                                    .put(Emailv31.Message.TEMPLATELANGUAGE, true)
+                                    .put(Emailv31.Message.SUBJECT, "Confirmacion de registro")
+                                    .put(Emailv31.Message.VARIABLES, new JSONObject()
+                                            .put("confirmation_link", "")
+                                            .put("firstname",name))));
+            response = client.post(request);
+            System.out.println(response.getStatus());
+            System.out.println(response.getData());
+        }
 
     @Override
     public void sendSimpleMessageUsingTemplate(String to, String subject, SimpleMailMessage template, String... templateArgs) {

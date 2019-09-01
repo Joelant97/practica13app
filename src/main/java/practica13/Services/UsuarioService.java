@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface UsuarioService{
 
-    void crearUsuario(Usuario usuario);
+    Usuario crearUsuario(Usuario usuario);
     void actualizarUsuario(Usuario usuario);
     void borrarUsuarioPorId(long id);
     void borrarTodosLosUsuarios();
@@ -14,5 +14,6 @@ public interface UsuarioService{
     Usuario buscarPorId(long id);
     Usuario findByUsername(String username);
     boolean usuarioExiste(Usuario usuario);
+
 
 }

@@ -62,6 +62,7 @@ dependencies {
     compile('org.springframework.session:spring-session-core')
     //Hazelcast.
     compile('org.springframework.session:spring-session-hazelcast')
+    compile group: 'com.mailjet', name: 'mailjet-client', version: '4.2.0'
 
 }
 

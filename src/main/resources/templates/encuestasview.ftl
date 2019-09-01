@@ -108,7 +108,6 @@
                                         </td>
                                     </tr>
                                     </#list>
-
                         </tbody>
                     </table>
                 </div>
