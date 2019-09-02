@@ -47,6 +47,19 @@ public class IndexController {
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String loginGET(Model model) {
 
+        if(usuarioService.buscarTodosUsuarios().size() == 0) {
+            Rol adminrol = new Rol();
+            adminrol.setNombreRol("ADMIN");
+            adminrol.setDeleted(false);
+            adminrol = rolService.crearRol(adminrol);
+
+            Rol participanterol = new Rol();
+            participanterol.setNombreRol("Participante");
+            Rol r = rolService.crearRol(participanterol);
+            System.out.println(r + "creado");
+
+            usuarioService.crearUsuario(new Usuario("admin", "admin", "admin@gmail.com", true, adminrol, 1));
+        }
         return "login";
     }
 

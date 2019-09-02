@@ -58,7 +58,7 @@ public class UsuariosController {
         Usuario user = usuarioService.crearUsuario(u);
         if(user.getRol().getNombreRol().equals("Participante")){
             try {
-                emailService.sendSimpleMessageApi(u.getEmail(), u.getUsername(), u.getPassword(), "",
+                emailService.sendSimpleMessageApi(u.getEmail(), username, password, "",
                         "localhost:80/encuestas/?uid="+user.getId());
             } catch (MailjetException e) {
                 e.printStackTrace();

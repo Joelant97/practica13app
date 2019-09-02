@@ -71,33 +71,33 @@ public class EmailServiceImpl implements EmailService {
     }
 
     public void sendSimpleMessageApi(String to, String name, String password, String subject, String link) throws
-        MailjetException, MailjetSocketTimeoutException {
-            MailjetClient client;
-            MailjetRequest request;
-            MailjetResponse response;
-            client = new MailjetClient(APIKey, SecretKey, new ClientOptions("v3.1"));
-            request = new MailjetRequest(Emailv31.resource)
-                    .property(Emailv31.MESSAGES, new JSONArray()
-                            .put(new JSONObject()
-                                    .put(Emailv31.Message.FROM, new JSONObject()
-                                            .put("Email", "20121917@ce.pucmm.edu.do")
-                                            .put("Name", "PUCMM"))
-                                    .put(Emailv31.Message.TO, new JSONArray()
-                                            .put(new JSONObject()
-                                                    .put("Email", to)
-                                                    .put("Name", name)))
-                                    .put(Emailv31.Message.TEMPLATEID, 978112)
-                                    .put(Emailv31.Message.TEMPLATELANGUAGE, true)
-                                    .put(Emailv31.Message.SUBJECT, "Confirmacion de registro")
-                                    .put(Emailv31.Message.VARIABLES, new JSONObject()
-                                            .put("confirmation_link", link)
-                                            .put("firstname", name))
-                                            .put("username", name)
-                                            .put("password", password)));
-            response = client.post(request);
-            System.out.println(response.getStatus());
-            System.out.println(response.getData());
-        }
+            MailjetException, MailjetSocketTimeoutException {
+        MailjetClient client;
+        MailjetRequest request;
+        MailjetResponse response;
+        client = new MailjetClient(APIKey, SecretKey, new ClientOptions("v3.1"));
+        request = new MailjetRequest(Emailv31.resource)
+                .property(Emailv31.MESSAGES, new JSONArray()
+                        .put(new JSONObject()
+                                .put(Emailv31.Message.FROM, new JSONObject()
+                                        .put("Email", "20121917@ce.pucmm.edu.do")
+                                        .put("Name", "PUCMM"))
+                                .put(Emailv31.Message.TO, new JSONArray()
+                                        .put(new JSONObject()
+                                                .put("Email", to)
+                                                .put("Name", name)))
+                                .put(Emailv31.Message.TEMPLATEID, 978112)
+                                .put(Emailv31.Message.TEMPLATELANGUAGE, true)
+                                .put(Emailv31.Message.SUBJECT, "Confirmacion de registro: "+"usuario: "+name+"  Password: "+password)
+                                .put(Emailv31.Message.VARIABLES, new JSONObject()
+                                        .put("confirmation_link", link)
+                                        .put("firstname", name))
+                                .put("username", name)
+                                .put("password", password)));
+        response = client.post(request);
+        System.out.println(response.getStatus());
+        System.out.println(response.getData());
+    }
 
     @Override
     public void sendSimpleMessageUsingTemplate(String to, String subject, SimpleMailMessage template, String... templateArgs) {

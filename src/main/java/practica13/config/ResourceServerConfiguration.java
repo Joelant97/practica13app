@@ -48,7 +48,6 @@ public class ResourceServerConfiguration extends WebSecurityConfigurerAdapter {
                 .antMatchers("/assets/**", "/javascripts/**",  "/img/**").permitAll() //permitiendo llamadas a esas urls.
                 .antMatchers("/h2/**").permitAll()
                 .antMatchers("/").hasAnyAuthority("ADMIN","Vendedor")
-                .antMatchers("/usuarios/**","/roles/**").hasAnyAuthority("ADMIN")
                 .antMatchers("/encuestas/**").hasAnyAuthority("Participante", "ADMIN")
                 .and()
                 .formLogin()

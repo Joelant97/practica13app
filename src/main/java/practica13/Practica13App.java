@@ -44,22 +44,10 @@ public class Practica13App extends SpringBootServletInitializer {
        // SpringApplication.run(Practica13App.class, args);
         ApplicationContext applicationContext = SpringApplication.run(Practica13App.class, args);
 
-        UsuarioService usuarioService = (UsuarioServiceImpl) applicationContext.getBean("usuarioService");
-        RolService rolService = (RolServiceImpl) applicationContext.getBean("rolService");
 
-        Rol adminrol = new Rol();
-        adminrol.setNombreRol("ADMIN");
-        adminrol.setDeleted(false);
-        adminrol = rolService.crearRol(adminrol);
 
-        Rol participanterol = new Rol();
-        participanterol.setNombreRol("Participante");
-        Rol r = rolService.crearRol(participanterol);
-        System.out.println(r + "creado");
+        }
 
-        usuarioService.crearUsuario(new Usuario("admin", "admin", "admin@gmail.com", true, adminrol, 1));
-
-    }
 
 
     @Bean
