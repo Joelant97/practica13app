@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface RolService {
 
-    void crearRol(Rol rol);
+    Rol crearRol(Rol rol);
     void actualizarRol(Rol rol);
     void borrarRolPorId(long id);
     void borrarTodosLosRoles();

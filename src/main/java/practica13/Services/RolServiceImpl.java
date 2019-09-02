@@ -15,8 +15,8 @@ public class RolServiceImpl implements RolService {
     @Autowired
     private RolRepository rolRepository;
 
-    public void crearRol(Rol rol){
-        rolRepository.save(rol);
+    public Rol crearRol(Rol rol){
+        return rolRepository.save(rol);
     }
     public void actualizarRol(Rol rol){
         crearRol(rol);

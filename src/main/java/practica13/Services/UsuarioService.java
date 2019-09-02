@@ -15,5 +15,4 @@ public interface UsuarioService{
     Usuario findByUsername(String username);
     boolean usuarioExiste(Usuario usuario);
 
-
 }

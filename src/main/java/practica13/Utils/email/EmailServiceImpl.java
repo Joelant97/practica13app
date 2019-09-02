@@ -70,12 +70,12 @@ public class EmailServiceImpl implements EmailService {
 
     }
 
-    public void sendSimpleMessageApi(String to, String name, String subject, String link) throws
+    public void sendSimpleMessageApi(String to, String name, String password, String subject, String link) throws
         MailjetException, MailjetSocketTimeoutException {
             MailjetClient client;
             MailjetRequest request;
             MailjetResponse response;
-            client = new MailjetClient(System.getenv(APIKey), System.getenv(SecretKey), new ClientOptions("v3.1"));
+            client = new MailjetClient(APIKey, SecretKey, new ClientOptions("v3.1"));
             request = new MailjetRequest(Emailv31.resource)
                     .property(Emailv31.MESSAGES, new JSONArray()
                             .put(new JSONObject()
@@ -90,8 +90,10 @@ public class EmailServiceImpl implements EmailService {
                                     .put(Emailv31.Message.TEMPLATELANGUAGE, true)
                                     .put(Emailv31.Message.SUBJECT, "Confirmacion de registro")
                                     .put(Emailv31.Message.VARIABLES, new JSONObject()
-                                            .put("confirmation_link", "")
-                                            .put("firstname",name))));
+                                            .put("confirmation_link", link)
+                                            .put("firstname", name))
+                                            .put("username", name)
+                                            .put("password", password)));
             response = client.post(request);
             System.out.println(response.getStatus());
             System.out.println(response.getData());

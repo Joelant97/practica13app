@@ -38,8 +38,8 @@ public class EncuestaController {
     @Autowired
     private UsuarioServiceImpl usuarioService;
 
-    @GetMapping("/{uid}")
-    public String encuestas(Model model, @PathVariable("uid") Long uid)
+    @GetMapping("/")
+    public String encuestas(Model model)
     {
         List<Encuesta> encuestas = new ArrayList<>();
         encuestas = encuestaService.listarEncuestas();

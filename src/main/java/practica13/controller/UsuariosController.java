@@ -46,7 +46,7 @@ public class UsuariosController {
                                @RequestParam("email") String email,
                                @RequestParam("rol") String rol){
 
-        //Usuario u = new Usuario(1, "admin", "admin", "admin@gmail.com", true, 1);
+
         Usuario u = new Usuario();
         u.setUsername(username);
         u.setPassword(password);
@@ -56,9 +56,9 @@ public class UsuariosController {
         r = rolService.findByNombreRol(rol);
         u.setRol(r);
         Usuario user = usuarioService.crearUsuario(u);
-        if(user.getRol().getNombreRol() == "Participante"){
+        if(user.getRol().getNombreRol().equals("Participante")){
             try {
-                emailService.sendSimpleMessageApi(u.getEmail(), u.getUsername(), "",
+                emailService.sendSimpleMessageApi(u.getEmail(), u.getUsername(), u.getPassword(), "",
                         "localhost:80/encuestas/?uid="+user.getId());
             } catch (MailjetException e) {
                 e.printStackTrace();
@@ -68,6 +68,7 @@ public class UsuariosController {
         }
         return "redirect:/usuarios/";
     }
+
 
     @PostMapping("/modificar/")
     public String modificarUsuario(@RequestParam("username2") String username, @RequestParam("id2") String id,

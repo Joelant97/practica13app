@@ -34,6 +34,7 @@ public class UsuarioServiceImpl implements UsuarioService, SecurityService {
     @Transactional
     public Usuario crearUsuario(Usuario usuario){
         usuario.setPassword(bCryptPasswordEncoder.encode(usuario.getPassword()));
+
         return usuarioRepository.save(usuario);
     }
 
