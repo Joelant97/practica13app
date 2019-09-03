@@ -26,8 +26,8 @@ import java.util.Properties;
 @Component
 public class EmailServiceImpl implements EmailService {
 
-    final String APIKey = "ee3d1ce4b3b4d90fec2657fe1911b146";
-    final String SecretKey = "820b090f83e75d13fcac862a6808a634";
+    final String ak = "ee3d1ce4b3b4d90fec2657fe1911b146";
+    final String sk = "3345bfa22c8eebb5b69a9f36670cd640";
 
     @Autowired
     public JavaMailSender emailSender;
@@ -46,7 +46,7 @@ public class EmailServiceImpl implements EmailService {
                 {
                     protected PasswordAuthentication getPasswordAuthentication ()
                     {
-                        return new PasswordAuthentication (APIKey, SecretKey);
+                        return new PasswordAuthentication (ak, sk);
                     }
                 });
         try
@@ -75,7 +75,7 @@ public class EmailServiceImpl implements EmailService {
         MailjetClient client;
         MailjetRequest request;
         MailjetResponse response;
-        client = new MailjetClient(APIKey, SecretKey, new ClientOptions("v3.1"));
+        client = new MailjetClient(ak, sk, new ClientOptions("v3.1"));
         request = new MailjetRequest(Emailv31.resource)
                 .property(Emailv31.MESSAGES, new JSONArray()
                         .put(new JSONObject()

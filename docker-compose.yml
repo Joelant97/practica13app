@@ -3,7 +3,7 @@ version: '3'
 services:
 
   spring:
-    image: leonardoaii71/spring:red
+    image: leonardoaii71/spring:final
     ports:
       - 8080
     environment:
@@ -57,17 +57,17 @@ services:
     volumes:
       - mysql_db:/var/lib/mysql
 
-  visualizer:
-    image: dockersamples/visualizer:stable
-    ports:
-      - "8080:8080"
-    volumes:
-      - "/var/run/docker.sock:/var/run/docker.sock"
-    deploy:
-      placement:
-        constraints: [node.role == manager]
-    networks:
-      - web
+#  visualizer:
+#    image: dockersamples/visualizer:stable
+#    ports:
+#      - "8080:8080"
+#    volumes:
+#      - "/var/run/docker.sock:/var/run/docker.sock"
+#    deploy:
+#      placement:
+#        constraints: [node.role == manager]
+#    networks:
+#      - web
 
 volumes:
   mysql_db:
