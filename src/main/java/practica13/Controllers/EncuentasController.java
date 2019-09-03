@@ -1,6 +1,8 @@
 package practica13.Controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,6 +16,8 @@ public class EncuentasController {
 
     @Autowired
     public EmailServiceImpl emailService;
+    @Autowired
+    Environment environment;
 
     @GetMapping("/sendmail")
     @ResponseBody
@@ -40,8 +44,9 @@ public class EncuentasController {
             hits = 0;
         }
 
+        String port = environment.getProperty("local.server.port");
         httpSession.setAttribute("hits", ++hits);
 
-        return "Hits: "+hits;
+        return "Hits: "+hits+" at: "+port;
     }
 }

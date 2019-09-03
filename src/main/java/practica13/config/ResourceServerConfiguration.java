@@ -20,20 +20,13 @@ public class ResourceServerConfiguration extends WebSecurityConfigurerAdapter {
 
     @Autowired
     public UserDetailsService userDetailsService;
-
     @Autowired
     private BCryptPasswordEncoder bCryptPasswordEncoder;
-
-
     @Autowired
     private DataSource dataSource;
 
-
-
     @Override
     public void configure(AuthenticationManagerBuilder auth) throws Exception {
-
-
         auth.jdbcAuthentication().dataSource(dataSource)
                 .usersByUsernameQuery("select username, password, active from usuario where username = ?")
                 .authoritiesByUsernameQuery("select u.username, r.nombre_rol from usuario u inner join rol r on u.rol_id = r.id where u.username = ?")

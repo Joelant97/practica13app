@@ -59,10 +59,10 @@ dependencies {
     compile group: 'joda-time', name: 'joda-time', version: '2.10'
 
     //Spring Session.
-    compile('org.springframework.session:spring-session-core')
-    //Hazelcast.
-    compile('org.springframework.session:spring-session-hazelcast')
+    compile('org.springframework.session:spring-session-data-redis')
+
     compile group: 'com.mailjet', name: 'mailjet-client', version: '4.2.0'
+    compile 'redis.clients:jedis'
 
 }
 

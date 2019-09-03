@@ -60,6 +60,7 @@ public class IndexController {
 
             usuarioService.crearUsuario(new Usuario("admin", "admin", "admin@gmail.com", true, adminrol, 1));
         }
+        System.out.println();
         return "login";
     }
 

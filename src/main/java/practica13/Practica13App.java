@@ -8,6 +8,7 @@ import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfi
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
+import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.JavaMailSenderImpl;
 import practica13.Models.Rol;
@@ -37,7 +38,7 @@ public class Practica13App extends SpringBootServletInitializer {
     @Autowired
     UsuarioService usuarioService;
 
-    public static final String USE_HAZELCAST = "true";
+    //public static final String USE_HAZELCAST = "true";
 
     public static void main(String[] args) {
 
@@ -47,9 +48,14 @@ public class Practica13App extends SpringBootServletInitializer {
 
 
         }
-
-
-
+/*
+    @Bean
+    public JedisConnectionFactory connectionFactory() {
+        JedisConnectionFactory connection = new JedisConnectionFactory();
+        connection.setHostName("redis");
+        return connection;
+    }
+*/
     @Bean
     public JavaMailSender getJavaMailSender() {
         JavaMailSenderImpl mailSender = new JavaMailSenderImpl();

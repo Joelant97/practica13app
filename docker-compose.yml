@@ -3,27 +3,34 @@ version: '3'
 services:
 
   spring:
-    image: leonardoaii71/spring:dev
+    image: leonardoaii71/spring:red
     ports:
       - 8080
     environment:
       - SERVICE_PORTS=8080
       - SERVER_PORT=8080
-    deploy:
-      replicas: 3
-      resources:
-        limits:
-          cpus: "0.4"
     networks:
       - web
-
+      - db
     depends_on:
       - mysqldb
+      - redis
+    deploy:
+      replicas: 2
+
+  redis:
+    image: redis
+    hostname: redis
+    networks:
+      - web
+    ports:
+      - 6379:6379
 
   haproxy:
     image: dockercloud/haproxy:latest
     depends_on:
       - spring
+      - spring2
     environment:
       - BALANCE=roundrobin
     volumes:
@@ -41,7 +48,7 @@ services:
   mysqldb:
     image: mysql
     networks:
-      - web
+      - db
     environment:
       - MYSQL_ROOT_PASSWORD=root
       - MYSQL_DATABASE=polls
@@ -50,9 +57,23 @@ services:
     volumes:
       - mysql_db:/var/lib/mysql
 
+  visualizer:
+    image: dockersamples/visualizer:stable
+    ports:
+      - "8080:8080"
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock"
+    deploy:
+      placement:
+        constraints: [node.role == manager]
+    networks:
+      - web
+
 volumes:
   mysql_db:
 
 networks:
   web:
     driver: overlay
+  db:
+
